@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './ICMForm.css';
+import { useTranslation } from 'react-i18next';
 
 function IMCForm() {
+    const { t } = useTranslation();
     const [altura, setAltura] = useState('');
     const [peso, setPeso] = useState('');
     const [imc, setImc] = useState(null);
@@ -13,7 +15,7 @@ function IMCForm() {
         const imcCalculado = (peso / (alturaMetros * alturaMetros)).toFixed(1);
         setImc(imcCalculado);
         setClassificacao(getClassificacaoIMC(imcCalculado));
-    
+
         setAltura('');
         setPeso('');
     };
@@ -30,39 +32,39 @@ function IMCForm() {
     return (
         <container>
             <div className="imc-widget">
-            <h2>Calculadora de IMC</h2>
-            <form onSubmit={calcularIMC}>
-                <div className="input-group">
-                    <label htmlFor="altura">Altura (cm):</label>
-                    <input
-                        type="number"
-                        id="altura"
-                        value={altura}
-                        onChange={(e) => setAltura(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="input-group">
-                    <label htmlFor="peso">Peso (kg):</label>
-                    <input
-                        type="number"
-                        id="peso"
-                        value={peso}
-                        onChange={(e) => setPeso(e.target.value)}
-                        required
-                    />
-                </div>
-                <button type="submit" className="btn-calculate">Calcular</button>
-            </form>
-            {imc && (
-                <div className="result">
-                    <h3>Seu IMC: {imc}</h3>
-                    <p>Classificação: {classificacao}</p>
-                </div>
-            )}
-        </div>
+                <h2>Calculadora de IMC</h2>
+                <form onSubmit={calcularIMC}>
+                    <div className="input-group">
+                        <label htmlFor="altura">Altura (cm):</label>
+                        <input
+                            type="number"
+                            id="altura"
+                            value={altura}
+                            onChange={(e) => setAltura(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="peso">Peso (kg):</label>
+                        <input
+                            type="number"
+                            id="peso"
+                            value={peso}
+                            onChange={(e) => setPeso(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="btn-calculate">Calcular</button>
+                </form>
+                {imc && (
+                    <div className="result">
+                        <h3>Seu IMC: {imc}</h3>
+                        <p>Classificação: {classificacao}</p>
+                    </div>
+                )}
+            </div>
         </container>
-        
+
     );
 }
 

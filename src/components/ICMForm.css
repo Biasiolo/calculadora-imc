@@ -76,8 +76,8 @@
 .btn-about {
     background-color: transparent;
     border: 1px solid #bdbdbd;
-    box-shadow: -1px -1px 2px #e0e3e7, 1px 1px 2px #3d4657;
-    color: #e0e3e7;
+    box-shadow: 1px 1px 2px #d3d7dd, -1px -1px 2px #3e573d;
+    color: #bdbdbd;
     padding: 8px 30px; /* Ajuste de altura e largura */
     border-radius: 5px;
     cursor: pointer;
@@ -93,8 +93,8 @@
 .btn-about:hover {
     background-color: transparent;
     border: 1px solid #8590a1;
-    box-shadow: 1px 1px 2px #d3d7dd, -1px -1px 2px #3d4657;
-    color: #5b6577;
+    box-shadow: 1px 1px -3px #d3d7dd, -1px -1px 3px #3e573d;
+    color: #bdbdbd;
 }
 
 
